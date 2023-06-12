@@ -34,4 +34,4 @@ jobs:
       env: 
         TOMCAT_USER: ${{ secrets.TOMCAT_USER }}
         TOMCAT_PASS: ${{ secrets.TOMCAT_PASS }}
-      run: curl --upload-file target/mvnwebapp.war "https://deployer:deployer%@http://1121-2406-7400-56-6842-e0ad-f0bd-1514-e83d.ngrok-free.app/manager/text/deploy?path=/byactions&update=true"
+      run: curl --upload-file target/mvnwebapp.war "http://$(TOMCAT_USER):$(TOMCAT_PASS)@1121-2406-7400-56-6842-e0ad-f0bd-1514-e83d.ngrok-free.app/manager/text/deploy?path=/byactions&update=true"
